@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Portrait stylise">
+  <defs>
+    <linearGradient id="bg" x1="28" y1="23" x2="211" y2="221" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7fafc"/>
+      <stop offset="1" stop-color="#dce7f5"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="64" y1="155" x2="176" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#092a4a"/>
+      <stop offset="1" stop-color="#03142a"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" fill="url(#bg)"/>
+  <circle cx="120" cy="100" r="54" fill="#5a321d"/>
+  <path d="M70 91c5-37 28-57 60-55 29 2 50 23 44 60-18-14-34-21-55-21-20 0-35 5-49 16Z" fill="#17110f"/>
+  <path d="M63 229c9-52 35-78 57-78s49 26 58 78H63Z" fill="url(#shirt)"/>
+  <path d="M98 157h44l-12 37h-20l-12-37Z" fill="#f2f6fb"/>
+  <path d="M88 104c2 33 16 55 32 55s31-22 33-55c2-29-12-47-33-47s-34 18-32 47Z" fill="#7b4527"/>
+  <path d="M92 116c9 9 20 13 31 13 10 0 19-4 27-12-4 22-15 36-30 36-14 0-24-14-28-37Z" fill="#633018" opacity=".35"/>
+  <path d="M102 129c12 9 25 9 37 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M101 97c7-4 15-4 21 1M137 98c6-5 14-5 21-1" fill="none" stroke="#181312" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="111" cy="111" r="5" fill="#16110f"/>
+  <circle cx="146" cy="111" r="5" fill="#16110f"/>
+  <path d="M127 107c-2 10-5 19-9 28 6 3 14 3 20 0" fill="none" stroke="#532b18" stroke-width="5" stroke-linecap="round"/>
+  <path d="M92 91c-3 1-8 2-12 0 2-31 17-46 40-48 26-2 42 14 46 45-27-17-50-20-74 3Z" fill="#111"/>
+  <rect x="72" y="99" width="43" height="27" rx="10" fill="none" stroke="#101820" stroke-width="6"/>
+  <rect x="129" y="99" width="43" height="27" rx="10" fill="none" stroke="#101820" stroke-width="6"/>
+  <path d="M115 112h14" stroke="#101820" stroke-width="6"/>
+  <path d="M77 105 62 98M177 104l-13 4" stroke="#101820" stroke-width="5" stroke-linecap="round"/>
+  <path d="M77 184c12-16 26-25 43-25s32 9 44 25" fill="none" stroke="#144a76" stroke-width="4" opacity=".8"/>
+</svg>
