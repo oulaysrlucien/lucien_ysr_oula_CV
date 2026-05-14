@@ -1,4 +1,4 @@
-# CV web - Lucien D.
+# CV web - Lucien OULA
 
 CV web statique moderne, premium et responsive pour un Developpeur Salesforce / Integrateur API.
 
