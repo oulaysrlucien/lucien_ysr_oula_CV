@@ -12,6 +12,7 @@
   --hero: #020b1f;
   --hero-2: #061b45;
   --shadow: 0 22px 60px rgba(10, 30, 70, 0.13);
+  --hero-overlap: 46px;
   --radius: 8px;
 }
 
@@ -28,7 +29,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background: linear-gradient(180deg, #edf3fb 0%, #ffffff 38%, #edf3fb 100%);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: "Manrope", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -58,10 +59,11 @@ svg {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(430px, 1fr) minmax(410px, 1.18fr) minmax(230px, 0.72fr);
-  gap: 24px;
+  grid-template-columns: minmax(430px, 0.95fr) minmax(420px, 1fr) 168px;
+  grid-template-rows: auto 1fr;
+  gap: 20px 24px;
   min-height: 430px;
-  padding: 36px 40px 28px;
+  padding: 34px 40px 54px;
   color: #fff;
   overflow: hidden;
   background:
@@ -96,7 +98,9 @@ svg {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  grid-template-columns: 180px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
@@ -106,6 +110,10 @@ svg {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+}
+
+.intro {
+  min-width: 0;
 }
 
 .portrait {
@@ -149,14 +157,16 @@ svg {
 h1 {
   margin: 0;
   color: #fff;
-  font-size: 50px;
+  font-size: 46px;
   line-height: 1;
   letter-spacing: 0;
   white-space: nowrap;
+  font-weight: 800;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.34);
 }
 
 .role {
-  margin: 18px 0 0;
+  margin: 22px 0 0;
   color: var(--cyan);
   font-size: 19px;
   font-weight: 750;
@@ -169,99 +179,60 @@ h1 {
 }
 
 .summary {
-  max-width: 510px;
-  margin: 32px 0 0;
+  max-width: 520px;
+  margin: 34px 0 0;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 15px;
-  line-height: 1.85;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.summary span {
+  display: block;
+  white-space: nowrap;
 }
 
 .certifications {
   position: relative;
   z-index: 1;
+  grid-column: 2 / 4;
+  grid-row: 1;
   display: grid;
-  grid-template-columns: repeat(5, minmax(78px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(5, minmax(82px, 106px));
+  gap: 14px;
+  justify-content: start;
   align-content: start;
-  padding-top: 28px;
+  padding-top: 20px;
+  padding-left: 46px;
 }
 
 .badge {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 108px;
-  padding: 18px 9px 15px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(155deg, #0b2d85 0%, #172b6a 62%, #39c8ff 100%);
-  clip-path: polygon(50% 0, 100% 24%, 100% 73%, 50% 100%, 0 73%, 0 24%);
-  filter: drop-shadow(0 10px 16px rgba(0, 8, 36, 0.32));
-}
-
-.badge::before {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  clip-path: inherit;
-}
-
-.badge span {
-  display: inline-grid;
-  place-items: center;
-  width: 32px;
-  height: 18px;
-  margin-top: 4px;
-  border-radius: 50%;
-  color: #fff;
-  background: #14aaf5;
-  font-size: 0;
-}
-
-.badge span::after {
-  content: "SF";
-  font-size: 8px;
-  font-weight: 900;
-}
-
-.badge strong {
-  margin-top: 2px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.badge small {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 9px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.badge.purple {
-  background: linear-gradient(155deg, #0b2d85 0%, #322078 60%, #7c51ff 100%);
-}
-
-.badge.cyan {
-  background: linear-gradient(155deg, #132a78 0%, #083a8c 56%, #00d6ff 100%);
-}
-
-.badge.orange {
-  background: linear-gradient(155deg, #132a78 0%, #192b78 56%, #ff8b22 100%);
+  display: block;
+  width: 100%;
+  max-width: 106px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 18px rgba(0, 5, 28, 0.38));
 }
 
 .hero-side {
   position: relative;
   z-index: 1;
+  grid-column: 2;
+  grid-row: 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  align-content: end;
+  justify-self: end;
+  align-content: start;
+  width: min(100%, 342px);
+  padding-top: 14px;
+  padding-right: 6px;
+  margin-left: 0;
 }
 
 .contact-list {
   display: grid;
-  gap: 18px;
+  gap: 17px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -269,11 +240,12 @@ h1 {
 
 .contact-list li {
   display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 14px;
+  grid-template-columns: 26px 1fr;
+  gap: 16px;
   align-items: center;
   color: rgba(255, 255, 255, 0.92);
   font-size: 14px;
+  font-weight: 500;
 }
 
 .contact-list svg {
@@ -281,14 +253,19 @@ h1 {
 }
 
 .qr-card {
+  position: relative;
+  z-index: 1;
+  grid-column: 3;
+  grid-row: 2;
+  align-self: start;
   justify-self: end;
-  width: 168px;
-  padding: 13px 14px 14px;
+  width: 172px;
+  padding: 14px 14px 15px;
   border: 1px solid rgba(0, 132, 255, 0.95);
   border-radius: var(--radius);
   text-align: center;
   background: rgba(0, 30, 78, 0.66);
-  box-shadow: inset 0 0 24px rgba(0, 146, 255, 0.14), 0 14px 34px rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 0 24px rgba(0, 146, 255, 0.14), 0 18px 42px rgba(0, 0, 0, 0.28);
 }
 
 .qr-card p {
@@ -330,14 +307,16 @@ h1 {
   gap: 14px;
   align-items: start;
   padding: 0 14px 14px;
-  transform: translateY(-22px);
+  margin-bottom: calc(var(--hero-overlap) * -1);
+  transform: translateY(calc(var(--hero-overlap) * -1));
 }
 
 .panel {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 12px 34px rgba(22, 45, 90, 0.045);
+  background: rgba(255, 255, 255, 0.985);
+  box-shadow: 0 18px 46px rgba(10, 30, 70, 0.09), 0 2px 6px rgba(10, 30, 70, 0.04);
+  backdrop-filter: blur(10px);
 }
 
 .panel h2 {
@@ -625,17 +604,31 @@ h1 {
 @media (max-width: 1100px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 26px;
+    grid-template-rows: auto;
+    gap: 24px;
+    padding-bottom: 42px;
+  }
+
+  .identity,
+  .certifications,
+  .hero-side,
+  .qr-card {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .certifications {
-    grid-template-columns: repeat(5, minmax(88px, 120px));
+    grid-template-columns: repeat(5, minmax(76px, 96px));
     padding-top: 0;
+    padding-left: 0;
   }
 
   .hero-side {
-    grid-template-columns: 1fr auto;
     align-items: end;
+    margin-left: 0;
+    justify-self: start;
+    width: 100%;
+    padding-right: 0;
   }
 
   .qr-card {
@@ -665,6 +658,7 @@ h1 {
   .intro {
     display: grid;
     justify-items: center;
+    min-width: 0;
   }
 
   h1 {
@@ -675,12 +669,12 @@ h1 {
     margin-top: 22px;
   }
 
-  .certifications {
-    grid-template-columns: repeat(2, minmax(112px, 1fr));
+  .summary span {
+    white-space: normal;
   }
 
-  .badge {
-    min-height: 118px;
+  .certifications {
+    grid-template-columns: repeat(2, minmax(112px, 1fr));
   }
 
   .hero-side {
@@ -694,6 +688,7 @@ h1 {
   .content-grid {
     grid-template-columns: 1fr;
     padding: 0 10px 10px;
+    margin-bottom: 0;
     transform: none;
   }
 
