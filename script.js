@@ -1,9 +1,4 @@
 (function () {
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = String(new Date().getFullYear());
-  }
-
   const qr = document.getElementById("qr");
   if (qr) {
     const size = 19;
